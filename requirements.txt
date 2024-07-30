@@ -1,0 +1,7 @@
+# great-ideas/requirements.txt
+streamlit
+matplotlib
+pillow
+dspy-ai
+python-dotenv
+requests
