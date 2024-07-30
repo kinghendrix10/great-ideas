@@ -1,4 +1,4 @@
-# File: data_analysis_app/agents/business_model_canvas_agent.py
+# great-ideas/agents/business_model_canvas_agent.py
 import dspy
 from models.dspy_config import BasicPrompt, StructuredOutput
 import matplotlib.pyplot as plt
