@@ -1,5 +1,3 @@
-# File: data_analysis_app/README.md
-
 # Business Idea Analyzer
 
 This Streamlit application provides a comprehensive analysis of business ideas using AI-powered agents and web search capabilities.
