@@ -1,3 +1,0 @@
-lionagi
-pandas
-reportlab 
