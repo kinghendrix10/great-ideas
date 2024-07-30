@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# File: data_analysis_app/README.md
 
-## Getting Started
+# Business Idea Analyzer
 
-First, run the development server:
+This Streamlit application provides a comprehensive analysis of business ideas using AI-powered agents and web search capabilities.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Interactive web interface for inputting business ideas
+- Multi-agent analysis system covering various aspects of business planning
+- Integration with web search for up-to-date information
+- Visualizations including SWOT analysis and Business Model Canvas
+- Detailed reports on market research, target audience, revenue models, and more
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Installation
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. Clone this repository:
+   ```
+   git clone https://github.com/yourusername/business-idea-analyzer.git
+   cd business-idea-analyzer
+   ```
 
-## Learn More
+2. Create a virtual environment and activate it:
+   ```
+   python -m venv venv
+   source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+3. Install the required packages:
+   ```
+   pip install -r requirements.txt
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. Set up your environment variables:
+   Create a `.env` file in the root directory and add your API keys:
+   ```
+   OPENAI_API_KEY=your_openai_api_key_here
+   SERPAPI_API_KEY=your_serpapi_api_key_here
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Usage
 
-## Deploy on Vercel
+1. Run the Streamlit app:
+   ```
+   streamlit run main.py
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. Open your web browser and go to `http://localhost:8501`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+3. Enter your business idea in the input field and click the arrow button or press Enter
+
+4. Wait for the analysis to complete and explore the results in the various tabs
+
+## Project Structure
+
+- `main.py`: The main Streamlit application
+- `pages/`: Contains the different pages of the Streamlit app
+- `agents/`: Individual AI agents for different aspects of business analysis
+- `models/`: Configuration for the DSPy model
+- `utils/`: Utility functions for web search and report generation
+
+## Dependencies
+
+- Streamlit
+- DSPy
+- Matplotlib
+- Pillow
+- Requests
+- Python-dotenv
+- OpenAI
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
