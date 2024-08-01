@@ -1,13 +1,13 @@
 # great-ideas/agents/business_idea_agent.py
 import dspy
-from models.dspy_config import BasicPrompt, StructuredOutput
+from models.dspy_config import BasicPrompt, StructuredOutput, BasicChainOfThought
 from utils.web_search import web_search
 
 class BusinessIdeaAnalyzer(dspy.Module):
     def __init__(self):
         super().__init__()
-        self.analyze_prompt = BasicPrompt()
-        self.structure_output = dspy.ChainOfThought(StructuredOutput)
+        self.analyze_prompt = BasicChainOfThought(BasicPrompt)
+        self.structure_output = BasicChainOfThought(StructuredOutput)
 
     def forward(self, user_proj, previous_analyses):
         search_query = f"recent trends and innovations in {user_proj}"

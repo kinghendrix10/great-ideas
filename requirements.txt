@@ -5,3 +5,4 @@ pillow
 dspy-ai
 python-dotenv
 requests
+pypi-json

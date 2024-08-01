@@ -7,13 +7,13 @@ from agents import (
     create_canvas
 )
 import dspy
-from models.dspy_config import BasicPrompt, StructuredOutput
+from models.dspy_config import BasicPrompt, StructuredOutput, BasicChainOfThought
 
 class ReportSynthesizer(dspy.Module):
     def __init__(self):
         super().__init__()
-        self.synthesize_prompt = BasicPrompt()
-        self.structure_output = dspy.ChainOfThought(StructuredOutput)
+        self.synthesize_prompt = BasicChainOfThought(BasicPrompt)
+        self.structure_output = BasicChainOfThought(StructuredOutput)
 
     def forward(self, report_sections):
         synthesis = self.synthesize_prompt(

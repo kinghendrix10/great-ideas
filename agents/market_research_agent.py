@@ -1,13 +1,13 @@
 # great-ideas/agents/market_research_agent.py
 import dspy
-from models.dspy_config import BasicPrompt, StructuredOutput
+from models.dspy_config import BasicPrompt, StructuredOutput, BasicChainOfThought
 from utils.web_search import web_search
 
 class MarketResearchAnalyzer(dspy.Module):
     def __init__(self):
         super().__init__()
-        self.research_prompt = BasicPrompt()
-        self.structure_output = dspy.ChainOfThought(StructuredOutput)
+        self.research_prompt = BasicChainOfThought(BasicPrompt)
+        self.structure_output = BasicChainOfThought(StructuredOutput)
 
     def forward(self, user_proj, previous_analyses):
         business_idea = previous_analyses.get('business_idea', {})

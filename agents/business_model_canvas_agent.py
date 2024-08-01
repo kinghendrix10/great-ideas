@@ -1,14 +1,14 @@
 # great-ideas/agents/business_model_canvas_agent.py
 import dspy
-from models.dspy_config import BasicPrompt, StructuredOutput
+from models.dspy_config import BasicPrompt, StructuredOutput, BasicChainOfThought
 import matplotlib.pyplot as plt
 import io
 
 class BusinessModelCanvasCreator(dspy.Module):
     def __init__(self):
         super().__init__()
-        self.canvas_prompt = BasicPrompt()
-        self.structure_output = dspy.ChainOfThought(StructuredOutput)
+        self.canvas_prompt = BasicChainOfThought(BasicPrompt)
+        self.structure_output = BasicChainOfThought(StructuredOutput)
 
     def forward(self, user_proj, previous_analyses):
         canvas_content = self.canvas_prompt(
