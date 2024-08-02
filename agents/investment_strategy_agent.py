@@ -1,13 +1,13 @@
 # great-ideas/agents/investment_strategy_agent.py
 import dspy
-from models.dspy_config import BasicPrompt, StructuredOutput
+from models.dspy_config import BasicPrompt, StructuredOutput, BasicChainOfThought
 from utils.web_search import web_search
 
 class InvestmentStrategyAnalyzer(dspy.Module):
     def __init__(self):
         super().__init__()
-        self.strategy_prompt = BasicPrompt()
-        self.structure_output = dspy.ChainOfThought(StructuredOutput)
+        self.strategy_prompt = BasicChainOfThought(BasicPrompt)
+        self.structure_output = BasicChainOfThought(StructuredOutput)
 
     def forward(self, user_proj, previous_analyses):
         business_idea = previous_analyses.get('business_idea', {})
